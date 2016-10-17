@@ -20,7 +20,6 @@ const server = express()
 
 
 server.get('/path', function(req, res){
-	console.log(req.query.startX);
 	var query = req.query;
 	var path = AI.AStar({x: ~~(query.startX / 32), y: ~~(query.startY / 32)}, {x: ~~(query.endX / 32), y: ~~(query.endY / 32)}, blockingTerrain);
 	res.send(path);
