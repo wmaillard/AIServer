@@ -13,6 +13,9 @@ var AI = {
 
 
   AStar: function(startNode, eNode, blockingTerrain){  //This takes about  6 ms right now, pretty good!
+    if(blockingTerrain[startNode.x][startNode.y] || blockingTerrain[eNode.x][eNode.y]){
+      return [];
+    }
     this.terrainArray = blockingTerrain;
     this.closedSet = [];
     this.openSet = [];
@@ -44,7 +47,7 @@ var AI = {
 
     }while(this.openSet.length > 0)
 
-
+    return [];
 
 
 
